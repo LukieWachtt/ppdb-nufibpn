@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-panel {
+  background-color: #4CAF50;
+  color: white;
+  width: 35%;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden; /* tambahan */
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 5;
+  }
+  
+  .back-button:hover {
+    transform: translateX(-4px);
+    background-color: green;
+  }
+
+.logo {
+  margin-top: 50px;
+  width: 130px;
+  height: auto;
+}
+
+.yayasan-title {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.image {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.image img {
+  height: 404px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.right-panel {
+  background-color: white;
+  width: 65%;
+  padding: 50px 40px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.content-box h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.content-box p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.content-box ol {
+  padding-left: 20px;
+  line-height: 1.7;
+  font-size: 16px;
+  color: #333;
+}
+
+.next-button {
+  position: absolute;
+  right: 20px;
+  bottom: 30px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  font-size: 30px;
+  padding: 10px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.next-button:hover {
+  background-color: #45a049;
+}

@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f3f4f6;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 5;
+  }
+  
+  .back-button:hover {
+    transform: translateX(-4px);
+    background-color: green;
+  }
+  
+  .main-container {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+  }
+  
+  .Sign_in-card {
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  
+  .Sign_in-image {
+    flex: 1;
+    max-width: 50%;
+    overflow: hidden;
+  }
+  
+  .Sign_in-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .Sign_in-form {
+    flex: 1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .Sign_in-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .Sign_in-form label {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .Sign_in-form input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+  }
+  
+  .Sign_in-form button {
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .Sign_in-form button:hover {
+    background-color: #45a049;
+  }
+  
+  .Sign_in-form p {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .Sign_in-form a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .Sign_in-form a:hover {
+    text-decoration: underline;
+  }
+  
