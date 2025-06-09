@@ -57,7 +57,7 @@
         <input hidden name="next-page" next-page>
         <div class="form-buttons">
           <button type="submit" next-page="4" formnovalidate class="btn back"><</button>
-          <button type="submit" formmethod="{{ Request::is('*/edit') ? 'PUT' : 'POST' }}" formaction="{{ Request::is('*/edit') ? route('registrations.update', $registration) : route('registrations.store') }}" class="btn submit">Submit</button>
+          <button type="submit" formaction="{{ Request::is('*/edit') ? route('registrations.updateCustom', $registration) : route('registrations.store') }}" class="btn submit">Submit</button>
           <script src="{{ asset('js/registration-form.js') }}"></script>
         </div>
       </form>

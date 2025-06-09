@@ -138,7 +138,52 @@ class RegistrationController extends Controller
      */
     public function update(Request $request, Registration $registration)
     {
-        //
+        if (Auth::check() && Auth::user()->id == $registration->user_id) {
+            $inputs = $request->all();
+            $inputs = cacheFilesAndModifyInputs($request->allFiles(), $inputs);
+            foreach ($this->recognizedFileFields as $key) {
+                if (isset($inputs['file_' . $key])) {
+                    Storage::move('public/uploads/temp/' . $inputs['file_' . $key], 'public/uploads/' . $key . '/' . $inputs['file_' . $key]);
+                }
+            }
+            $registration->update($inputs + ['user_id' => Auth::user()->id]);
+            return redirect()->route('registrations.show', $registration)->with('success', 'Pendaftaran berhasil diperbarui');
+        } else {
+            return redirect()->route('login');
+        }
+    }
+
+    public function accept(Registration $registration)
+    {
+        if (Auth::check() && Auth::user()->role == 0) {
+            $registration->diterima = true;
+            $registration->save();
+            return redirect()->route('registrations.show', $registration)->with('success', 'Pendaftaran berhasil diterima');
+        } else {
+            return redirect()->route('registrations.show', $registration)->with('error', 'Anda tidak memiliki izin untuk menerima pendaftaran ini');
+        }
+    }
+
+    public function reject(Registration $registration)
+    {
+        if (Auth::check() && Auth::user()->role == 0) {
+            $registration->diterima = false;
+            $registration->save();
+            return redirect()->route('registrations.show', $registration)->with('success', 'Pendaftaran berhasil ditolak');
+        } else {
+            return redirect()->route('registrations.show', $registration)->with('error', 'Anda tidak memiliki izin untuk menolak pendaftaran ini');
+        }
+    }
+
+    public function resetStatus(Registration $registration)
+    {
+        if (Auth::check() && Auth::user()->role == 0) {
+            $registration->diterima = null;
+            $registration->save();
+            return redirect()->route('registrations.show', $registration)->with('success', 'Status pendaftaran berhasil direset');
+        } else {
+            return redirect()->route('registrations.show', $registration)->with('error', 'Anda tidak memiliki izin untuk mereset status pendaftaran ini');
+        }
     }
 
     /**
@@ -146,6 +191,11 @@ class RegistrationController extends Controller
      */
     public function destroy(Registration $registration)
     {
-        //
+        if (Auth::check() && Auth::user()->id == $registration->user_id) {
+            $registration->delete();
+            return redirect()->route('registrations.index')->with('success', 'Pendaftaran berhasil dihapus');
+        } else {
+            return redirect()->route('login');
+        }
     }
 }

@@ -56,6 +56,9 @@ return new class extends Migration
             $table->string('file_sertifikat_3')->nullable();
             $table->string('file_sertifikat_4')->nullable();
 
+            // Status penerimaan
+            $table->boolean('diterima')->nullable();
+
             // $table->string('name');
             // $table->string('akta');
             // $table->string('kartu_id_anak')->nullable();
