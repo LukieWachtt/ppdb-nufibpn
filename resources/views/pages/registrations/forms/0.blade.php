@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PPDB Yayasan Nurul Fikri</title>
-  <link rel="stylesheet" href="../css/register.css">
+  <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 </head>
 <body>
   <div class="container">
     <div class="left-panel">
-      <a href="index.html" class="back-button"><</a>
-      <img src="../img/Rectangle 6.png" alt="Logo Yayasan Nurul Fikri" class="logo">
+      <a onclick="history.back();" class="back-button"><</a>
+      <img src="{{ asset('img/Rectangle 6.png') }}" alt="Logo Yayasan Nurul Fikri" class="logo">
       <h1 class="yayasan-title">YAYASAN <br> NURUL FIKRI <br> BALIKPAPAN</h1>
       <div class="image">
-        <img src="../img/register.png" alt="anak1">
+        <img src="{{ asset('img/register.png') }}" alt="anak1">
       </div>
     </div>
     <div class="right-panel">
@@ -46,7 +46,7 @@
         @endforeach
         <input hidden name="next-page" next-page value="1">
         <button type="submit" next-page="1" class="next-button">></button>
-        <script src="../js/registration-form.js"></script>
+        <script src="{{ asset('js/registration-form.js') }}"></script>
       </form>
   </div>
 </body>

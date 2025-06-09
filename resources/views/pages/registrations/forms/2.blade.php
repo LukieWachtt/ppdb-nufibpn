@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Form Data Siswa</title>
-  <link rel="stylesheet" href="../css/form2.css" />
+  <link rel="stylesheet" href="{{ asset('css/form2.css') }}" />
 </head>
 <body>
   <div class="form-wrapper">
     <header class="form-header">
-      <img src="../img/Rectangle 6.png" alt="Logo Yayasan Nurul Fikri">
+      <img src="{{ asset('img/Rectangle 6.png') }}" alt="Logo Yayasan Nurul Fikri">
     </header>
     
     <nav class="form-nav">
@@ -53,7 +53,7 @@
         <div class="form-buttons">
           <button type="submit" next-page="1" formnovalidate class="btn back"><</button>
           <button type="submit" next-page="3" class="btn next">></button>
-          <script src="../js/registration-form.js"></script>
+          <script src="{{ asset('js/registration-form.js') }}"></script>
         </div>
       </form>
     </section>

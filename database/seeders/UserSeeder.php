@@ -20,5 +20,11 @@ class UserSeeder extends Seeder
             'password' => Hash::make('12345678'),
             'role' => 0
         ]);
+        User::factory()->create([
+            'name' => 'User',
+            'email' => 'user@example.com',
+            'password' => Hash::make('12345678'),
+            'role' => 1
+        ]);
     }
 }

@@ -26,7 +26,7 @@ $type_menu = 'dashboard';
                 <div class="card-header">
                     <h4>Data</h4>
                     <div class="card-header-action">
-                        <a href="{{ route('registrations.edit', $registration) }}" class="btn btn-primary">Edit&ThickSpace;&ThickSpace;<i class="fas fa-pencil"></i></a>
+                        <a href="{{ route('registrations.edit', $registration) }}" class="btn btn-primary"><i class="fas fa-pencil"></i>&nbsp;Edit</a>
                     </div>
                 </div>
                 <div class="card-body p-0">

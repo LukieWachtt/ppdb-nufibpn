@@ -1,6 +1,9 @@
 @php
 use App\Models\User;
 $type_menu = 'dashboard';
+if (!isset($user)) {
+    $user = Auth::user();
+}
 @endphp
 
 @extends('layouts.app')
@@ -56,9 +59,9 @@ $type_menu = 'dashboard';
             <div class="card">
                 <div class="card-header">
                     <h4>Data Pendaftar Terbaru</h4>
-                    {{-- <div class="card-header-action">
-                        <a href="#" class="btn btn-primary">View All</a>
-                    </div> --}}
+                    <div class="card-header-action">
+                        <a href="{{ route('registrations.create') }}" class="btn btn-primary"><i class="fas fa-add"></i>&nbsp;Daftar</a>
+                    </div>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
