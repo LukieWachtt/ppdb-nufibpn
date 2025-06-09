@@ -37,7 +37,7 @@
         Balikpapan</h2>
       <div class="button">
         <a href="#">
-          <a href="{{ route('register') }}" class="button2">Daftar Sekarang</a>
+          <a href="{{ route('registrations.create') }}" class="button2">Daftar Sekarang</a>
         </a>
       </div>
     </div>

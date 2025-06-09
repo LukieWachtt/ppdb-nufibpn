@@ -43,6 +43,7 @@ if (!isset($user)) {
                                     @else
                                     <th>Nama Calon Siswa </th>
                                     <th>Didaftarkan Oleh</th>
+                                    <th>Status Penerimaan</th>
                                     @endif
                                 </tr>
                             </thead>
@@ -60,6 +61,9 @@ if (!isset($user)) {
                                             <img src="../img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1">
                                             {{ $registration->user->name }}
                                         </a>
+                                    </td>
+                                    <td>
+                                        <div class="btn btn-{{ $registration->diterima != null ? ($registration->diterima ? 'success' : 'danger') : 'secondary' }}">@if ($registration->diterima != null) <i class="fas fa-{{ $registration->diterima ? 'check' : 'x' }}"></i> @endif &nbsp;{{ $registration->diterima != null ? ($registration->diterima ? 'Diterima' : 'Ditolak') : 'Menunggu' }}</div>
                                     </td>
                                     <td>
                                         <a href="{{ route('registrations.show', $registration) }}" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="View">

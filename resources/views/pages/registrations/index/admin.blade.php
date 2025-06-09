@@ -70,7 +70,7 @@ if (!isset($user)) {
                                 <tr>
                                     <th>Nama Calon Siswa </th>
                                     <th>Didaftarkan Oleh</th>
-
+                                    <th>Status Penerimaan</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -80,7 +80,6 @@ if (!isset($user)) {
                                         {{ $registration->nama }}
                                         <div class="table-links">
                                             didaftarkan pada {{ $registration->created_at->format('d/m/Y H:i') }}
-
                                         </div>
                                     </td>
                                     <td>
@@ -88,6 +87,9 @@ if (!isset($user)) {
                                             <img src="../img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1">
                                             {{ $registration->user->name }}
                                         </a>
+                                    </td>
+                                    <td>
+                                        <div class="btn btn-{{ $registration->diterima ? ($registration->diterima ? 'success' : 'danger') : 'secondary' }}">@if ($registration->diterima) <i class="fas fa-{{ $registration->diterima ? 'check' : 'x' }}"></i> @endif &nbsp;{{ $registration->diterima ? ($registration->diterima ? 'Diterima' : 'Ditolak') : 'Menunggu' }}</div>
                                     </td>
                                     <td>
                                         <a href="{{ route('registrations.show', $registration) }}" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="View">

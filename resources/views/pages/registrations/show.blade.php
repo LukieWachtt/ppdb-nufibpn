@@ -26,7 +26,21 @@ $type_menu = 'dashboard';
                 <div class="card-header">
                     <h4>Data</h4>
                     <div class="card-header-action">
+                        <form method="POST">
+                        @csrf
+                        @if (Auth::user()->id == $registration->user_id)
+                        @method('DELETE')
+                        <button formaction="{{ route('registrations.destroy', $registration) }}" type="submit" class="btn btn-danger" onclick="return confirm('Hapus pendaftaran ini?\nAksi ini tidak bisa dibatalkan, dan anda akan harus membuat pendaftaran ulang.');"><i class="fas fa-trash"></i>&nbsp;Hapus</button>
+                        &nbsp;
                         <a href="{{ route('registrations.edit', $registration) }}" class="btn btn-primary"><i class="fas fa-pencil"></i>&nbsp;Edit</a>
+                        @endif
+                        &nbsp;
+                        @if (Auth::user()->role == 0)
+                        <button formaction="{{ route('registrations.reject', $registration) }}" type="submit" class="btn btn-danger"><i class="fas fa-x"></i>&nbsp;Tolak</button>
+                        &nbsp;
+                        <button formaction="{{ route('registrations.accept', $registration) }}" type="submit" class="btn btn-success"><i class="fas fa-check"></i>&nbsp;Terima</button>
+                        @endif
+                        </form>
                     </div>
                 </div>
                 <div class="card-body p-0">
@@ -50,7 +64,11 @@ $type_menu = 'dashboard';
                                         {{ ucwords(str_replace(['_'], [' '], $field)) }}
                                     </td>
                                     <td>
+                                        @if (Str::startsWith($field, 'file_'))
+                                        <img style="height: 12rem; margin: 1rem 0; border-radius: 0.25rem;" src="{{ asset('storage/uploads/' . Str::after($field, 'file_') . '/' . $value) }}" alt="">
+                                        @else
                                         {{ $value }}
+                                        @endif
                                     </td>
                                 </tr>
                                 @endforeach
