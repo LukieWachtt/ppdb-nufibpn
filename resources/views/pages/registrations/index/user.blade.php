@@ -63,7 +63,7 @@ if (!isset($user)) {
                                         </a>
                                     </td>
                                     <td>
-                                        <div class="btn btn-{{ $registration->diterima != null ? ($registration->diterima ? 'success' : 'danger') : 'secondary' }}">@if ($registration->diterima != null) <i class="fas fa-{{ $registration->diterima ? 'check' : 'x' }}"></i> @endif &nbsp;{{ $registration->diterima != null ? ($registration->diterima ? 'Diterima' : 'Ditolak') : 'Menunggu' }}</div>
+                                        <div class="btn btn-{{ $registration->diterima !== null ? ($registration->diterima ? 'success' : 'danger') : 'secondary' }}">@if ($registration->diterima !== null) <i class="fas fa-{{ $registration->diterima ? 'check' : 'x' }}"></i> @endif &nbsp;{{ $registration->diterima !== null ? ($registration->diterima ? 'Diterima' : 'Ditolak') : 'Menunggu' }}</div>
                                     </td>
                                     <td>
                                         <a href="{{ route('registrations.show', $registration) }}" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="View">
