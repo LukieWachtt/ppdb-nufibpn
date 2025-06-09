@@ -42,7 +42,7 @@
         </div>
 
         <div class="form-row">
-          <select name="jenjang" required><option value="" {{ ($inputs['jenjang'] ?? null) === null ? 'selected' : null }} disabled>Pilihan Jenjang *</option><option value="sd" {{ ($inputs['jenjang'] ?? null) === 'sd' ? 'selected' : null }}>SD</option><option value="smp" {{ ($inputs['jenjang'] ?? null) === 'smp' ? 'selected' : null }}>SMP</option><option value="sma" {{ ($inputs['jenjang'] ?? null) === 'sma' ? 'selected' : null }}>SMA</option></select>
+          <select name="jenjang" required><option value="" {{ ($inputs['jenjang'] ?? null) === null ? 'selected' : null }} disabled>Pilihan Jenjang *</option><option value="TK" {{ ($inputs['jenjang'] ?? null) === 'TK' ? 'selected' : null }}>TK</option><option value="SD" {{ ($inputs['jenjang'] ?? null) === 'SD' ? 'selected' : null }}>SD</option><option value="SMP" {{ ($inputs['jenjang'] ?? null) === 'SMP' ? 'selected' : null }}>SMP</option></select>
           <div class="phone-input">
             <span>+62</span>
             <input type="tel" name="nomor_telepon_siswa" placeholder="No Telepon Siswa *" required value="{{ $inputs['nomor_telepon_siswa'] ?? null }}"/>

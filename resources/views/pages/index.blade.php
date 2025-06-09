@@ -70,7 +70,6 @@
         <div class="card-content">
           <div class="card-title">KB/TKIT Nurul Fikri Balikpapan</div>
           <div class="card-text">PPDB untuk jenjang TK.</div>
-          <button class="btn-jjg">See More</button>
         </div>
       </div>
 
@@ -79,7 +78,6 @@
         <div class="card-content">
           <div class="card-title">SDIT Nurul Fikri Balikpapan</div>
           <div class="card-text">PPDB untuk jenjang SD.</div>
-          <button class="btn-jjg">See More</button>
         </div>
       </div>
 
@@ -88,7 +86,6 @@
         <div class="card-content">
           <div class="card-title">SMPIT Nurul Fikri Balikpapan</div>
           <div class="card-text">PPDB untuk jenjang SMP.</div>
-          <button class="btn-jjg">See More</button>
         </div>
       </div>
     </div>
