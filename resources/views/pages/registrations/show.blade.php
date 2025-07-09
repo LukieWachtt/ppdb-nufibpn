@@ -25,22 +25,25 @@ $type_menu = 'dashboard';
             <div class="card">
                 <div class="card-header">
                     <h4>Data</h4>
-                    <div class="card-header-action">
+                    <div class="card-header-action flex-row">
+                        @if (Auth::user()->id == $registration->user_id)
                         <form method="POST">
                         @csrf
-                        @if (Auth::user()->id == $registration->user_id)
                         @method('DELETE')
                         <button formaction="{{ route('registrations.destroy', $registration) }}" type="submit" class="btn btn-danger" onclick="return confirm('Hapus pendaftaran ini?\nAksi ini tidak bisa dibatalkan, dan anda akan harus membuat pendaftaran ulang.');"><i class="fas fa-trash"></i>&nbsp;Hapus</button>
+                        </form>
                         &nbsp;
                         <a href="{{ route('registrations.edit', $registration) }}" class="btn btn-primary"><i class="fas fa-pencil"></i>&nbsp;Edit</a>
                         @endif
                         &nbsp;
                         @if (Auth::user()->role == 0)
+                        <form method="POST">
+                        @csrf
                         <button formaction="{{ route('registrations.reject', $registration) }}" type="submit" class="btn btn-danger"><i class="fas fa-x"></i>&nbsp;Tolak</button>
                         &nbsp;
                         <button formaction="{{ route('registrations.accept', $registration) }}" type="submit" class="btn btn-success"><i class="fas fa-check"></i>&nbsp;Terima</button>
-                        @endif
                         </form>
+                        @endif
                     </div>
                 </div>
                 <div class="card-body p-0">
